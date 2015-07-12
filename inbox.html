@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type ="text/javascript" src ="myscript.js"></script>
+<script type ="text/javascript">
+//window.onload=loadInbox();
+</script>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Inbox</title>
+</head>
+<body onload="loadInbox()">
+<div id="wrapper">
+<header>
+<h1>Email</h1>
+</header>
+
+<form name="inboxNav">
+<input type="button" class="inboxNav" value="Create new mail" onclick="return newMailFunction();">
+<input type="button" class="inboxNav" value="Refresh" onclick="window.location.reload();">
+<input type="submit" class="inboxNav" value="Logout" onclick="return logoutFunction();">
+</form>
+
+<p id="alertBox"></p>
+
+<form name="sendForm" id="sendForm" class="hidden">
+<p>To:</p><input type="text" id="toID" name="toID" placeholder="User ID" required>
+<p>From:</p><input type="text" id="fromID" name="fromID" readonly>
+<p>Subject:</p><input type="text" id="messageSubject" name="messageSubject" placeholder="Enter subject" required>
+<p>Message:</p><textarea rows="4" cols="50" id="messageBody" name="messageBody" placeholder="Enter message" required></textarea>
+<input type="submit" value="Send" onclick="return sendEmail();">
+</form>
+
+<h2>Inbox</h2>
+<table id="inboxTable">
+    <tr>
+        <th>Sender</th>
+    	<th>Subject</th>
+	    <th>Date</th>
+	</tr>
+</table>
+</div>
+</body>
+</html>
